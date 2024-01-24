@@ -21,5 +21,9 @@ npm i -D @builtwithjavascript/use-precise-interval
 ```
 import { usePreciseInterval } from '@builtwithjavascript/use-precise-interval'
 
+const cancelInterval = usePreciseInterval(yourCallbackFunction, 1000)
+
+// when you are done, make sure you cancel it:
+cancelInterval()
 
 ```
