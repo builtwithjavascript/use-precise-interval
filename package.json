@@ -1,0 +1,64 @@
+{
+  "name": "@builtwithjavascript/use-precise-interval",
+  "version": "1.0.0",
+  "description": "Hopefully a more accurate version of setInterval that runs without drifting",
+  "author": "Damiano Fusco",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/builtwithjavascript/use-precise-interval.git"
+  },
+  "bugs": {
+    "url": "https://github.com/builtwithjavascript/use-precise-interval/issues"
+  },
+  "homepage": "https://github.com/builtwithjavascript/use-precise-interval#readme",
+  "keywords": [
+    "javascript, timer, timers, interval, scripts, large scale apps, vue, react, svelte, nuxt, next, node"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build-types": "tsc src/main.ts --esModuleInterop --declaration --emitDeclarationOnly --outDir dist",
+    "build": "tsc --esModuleInterop && vite build && npm run build-types",
+    "pub": "npm publish --access public",
+    "test": "TESTING=true vitest run",
+    "test-watch": "TESTING=true vitest watch",
+    "pretty": "prettier -w \"./src/**/*.ts\"",
+    "version-patch": "npm run pretty; npm version patch -m \"Patch version\"",
+    "preversion": "npm run test",
+    "version": "npm run build",
+    "postversion": "git push"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged \"./src/**/*.ts\""
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.11.5",
+    "husky": "^8.0.3",
+    "jsdom": "^24.0.0",
+    "prettier": "^3.2.4",
+    "pretty-quick": "^4.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/use-precise-interval/index.d.ts",
+  "main": "dist/use-precise-interval.umd.js",
+  "module": "dist/use-precise-interval.es.js",
+  "exports": {
+    ".": {
+      "import": [
+        "./dist/use-precise-interval.es.js"
+      ],
+      "require": "./dist/use-precise-interval.umd.js"
+    },
+    "./package.json": "./package.json"
+  }
+}
