@@ -1,6 +1,6 @@
 {
   "name": "@builtwithjavascript/use-precise-interval",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hopefully a more accurate version of setInterval that runs without drifting",
   "author": "Damiano Fusco",
   "license": "MIT",

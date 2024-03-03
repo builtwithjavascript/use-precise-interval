@@ -7,7 +7,7 @@ Hopefully a more accurate version of setInterval that runs without drifting.
 TypeScript
 
 ## Description
-Contains hooks:
+Contains:
 - usePreciseInterval
 
 ## How to use
